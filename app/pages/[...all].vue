@@ -9,7 +9,7 @@ const router = useRouter()
     </div>
     <div>Not found</div>
     <div>
-      <button class="m-3 mt-8 btn" @click="router.back()">
+      <button class="m-4 mt-8 btn" @click="router.back()">
         Back
       </button>
     </div>

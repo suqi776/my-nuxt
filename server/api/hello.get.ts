@@ -1,11 +1,8 @@
-// server/api/hello.get.ts
-import os from 'node:os'
-import process from 'node:process'
+const startTime = Date.now()
 
 export default defineEventHandler((_event) => {
-  const computerName = os.hostname()
-  const name = process.env.HOST_NAME || computerName
   return {
-    message: `Hi,${name}`,
+    message: `Server started successfully`,
+    startTime,
   }
 })
