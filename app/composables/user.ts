@@ -7,7 +7,7 @@ export const useUserStore = defineStore('user', () => {
 
   const setName = (newName: string) => {
     if (currentName.value)
-      historyNames.value.add(newName)
+      historyNames.value.add(currentName.value)
     currentName.value = newName
   }
 
