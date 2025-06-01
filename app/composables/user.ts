@@ -1,15 +1,20 @@
 import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore('user', () => {
-  const name = ref('')
+  const currentName = ref('')
+  const historyNames = ref(new Set<string>())
+  const otherNames = computed(() => Array.from(historyNames.value).filter(name => name !== currentName.value))
 
   const setName = (newName: string) => {
-    name.value = newName
+    if (currentName.value)
+      historyNames.value.add(newName)
+    currentName.value = newName
   }
 
   return {
-    name,
+    currentName,
     setName,
+    otherNames,
   }
 })
 

@@ -23,7 +23,7 @@ function toggleDark() {
     <a
       i-carbon-logo-github icon-btn
       rel="noreferrer"
-      href="https://github.com/sqsuqi/my-nuxt"
+      href="https://github.com/suqi776/my-nuxt"
       target="_blank"
       title="GitHub"
     />

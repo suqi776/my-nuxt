@@ -6,6 +6,10 @@ const name = route.params.name
 watchEffect(() => {
   user.setName(name as string)
 })
+
+useHead({
+  title: `Hi, ${name}`,
+})
 </script>
 
 <template>
@@ -14,6 +18,19 @@ watchEffect(() => {
     <h1 class="px-4 pb-2 text-4xl font-bold">
       Hi, {{ name }}
     </h1>
+    <div v-if="user.otherNames.length" class="text-gray-600">
+      AKA:
+      <ul>
+        <li v-for="(item, index) in user.otherNames" :key="index">
+          <NuxtLink
+            :to="`/hi/${encodeURIComponent(item)}`"
+            class="hover:underline"
+          >
+            {{ item }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
     <NuxtLink to="/" class="my-4 btn">
       Back
     </NuxtLink>

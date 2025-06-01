@@ -27,16 +27,23 @@ function to() {
     <button class="my-4 btn" :disabled="!name" @click="to">
       Go
     </button>
-    <div class="text-gray-600">
-      <div v-if="pending">
-        Loading...
+    <ClientOnly>
+      <div class="text-gray-600">
+        <div v-if="pending">
+          Loading...
+        </div>
+        <div v-else-if="error">
+          Error: {{ error }}
+        </div>
+        <div v-else>
+          {{ `${time} ${data?.message}` }}
+        </div>
       </div>
-      <div v-else-if="error">
-        Error: {{ error }}
-      </div>
-      <div v-else>
-        {{ `${time} ${data?.message}` }}
-      </div>
-    </div>
+      <template #fallback>
+        <div class="animate-pulse text-gray-600 italic">
+          Loading...
+        </div>
+      </template>
+    </ClientOnly>
   </div>
 </template>
