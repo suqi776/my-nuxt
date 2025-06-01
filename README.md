@@ -1,75 +1,17 @@
-# Nuxt Minimal Starter
+### Introduction
+Nuxt3+Typescript+Pinia+UnoCSS+VueUse boilerplate.
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### Nuxt Modules
 
-## Setup
+- [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
+- [ColorMode](https://github.com/nuxt-modules/color-mode) - dark and Light mode with auto detection made easy with Nuxt.
+- [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic CSS engine.
+- [Pinia](https://github.com/vuejs/pinia) - intuitive, type safe, light and flexible Store for Vue.
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### Use
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+npx degit suqi776/my-nuxt my-nuxt-app
+cd my-nuxt-app
+pnpm i
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
