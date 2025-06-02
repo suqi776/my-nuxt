@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data, pending, error } = await useFetch('/api/hello')
+const { data, error } = await useFetch('/api/hello')
 const router = useRouter()
 const name = ref('')
 const time = useTimeAgo(() => data.value?.startTime || 0)
@@ -28,17 +28,16 @@ function to() {
       Go
     </button>
     <ClientOnly>
-      <div class="text-gray-600">
-        <div v-if="pending">
-          Loading...
+      <Suspense>
+        <div class="text-gray-600">
+          <div v-if="error">
+            Error: {{ error }}
+          </div>
+          <div v-else>
+            {{ `${time} ${data?.message}` }}
+          </div>
         </div>
-        <div v-else-if="error">
-          Error: {{ error }}
-        </div>
-        <div v-else>
-          {{ `${time} ${data?.message}` }}
-        </div>
-      </div>
+      </Suspense>
       <template #fallback>
         <div class="animate-pulse text-gray-600 italic">
           Loading...
