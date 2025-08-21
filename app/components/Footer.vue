@@ -15,7 +15,7 @@ function toggleDark() {
 </script>
 
 <template>
-  <nav w-full inline-flex justify-center gap-2 text-xl>
+  <nav text-xl inline-flex gap-2 w-full justify-center>
     <button icon-btn title="Toggle Dark Mode" @click="toggleDark">
       <div i-carbon-sun dark:i-carbon-moon />
     </button>
