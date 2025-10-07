@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { version as nuxtVersion } from 'nuxt/package.json'
+import { version as vueVersion } from 'vue'
+
 const { data, error } = await useFetch('/api/hello')
 const router = useRouter()
 const name = ref('')
@@ -12,14 +15,14 @@ function to() {
 
 <template>
   <div class="px-4 pb-4 pt-10 text-center">
-    <img class="inline-block h-18 w-18" src="/nuxt.svg">
-    <h1 class="px-4 text-4xl font-bold">
-      Welcome to Nuxt 3
+    <img class="h-18 w-18 inline-block" src="/nuxt.svg">
+    <h1 class="text-4xl font-bold px-4">
+      Welcome to Nuxt {{ nuxtVersion.substring(0, 1) }} + Vue {{ vueVersion.substring(0, 1) }}
     </h1>
     <div>
       <input
         v-model="name"
-        class="mt-4 border rounded p-2 text-center"
+        class="mt-4 p-2 text-center border rounded"
         placeholder="What's your name"
         @keydown.enter="to"
       >
@@ -39,7 +42,7 @@ function to() {
         </div>
       </Suspense>
       <template #fallback>
-        <div class="animate-pulse text-gray-600 italic">
+        <div class="text-gray-600 italic animate-pulse">
           Loading...
         </div>
       </template>
