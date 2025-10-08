@@ -1,5 +1,5 @@
 ### Introduction
-Nuxt3+Typescript+Pinia+UnoCSS+VueUse boilerplate.
+Nuxt+Typescript+Pinia+UnoCSS+VueUse boilerplate.
 
 ### Nuxt Modules
 
