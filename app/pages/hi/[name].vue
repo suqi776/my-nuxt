@@ -14,8 +14,8 @@ useHead({
 
 <template>
   <div class="px-4 pb-4 pt-10 text-center">
-    <div class="i-twemoji-waving-hand inline-block h-16 w-16 animate-shake-x animate-duration-5000" />
-    <h1 class="px-4 pb-2 text-4xl font-bold">
+    <div class="i-twemoji-waving-hand h-16 w-16 inline-block animate-shake-x animate-duration-5000" />
+    <h1 class="text-4xl font-bold px-4 pb-2">
       Hi, {{ name }}
     </h1>
     <div v-if="user.otherNames.length" class="text-gray-600">

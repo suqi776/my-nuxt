@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@vite-pwa/nuxt',
+    '@formkit/auto-animate',
   ],
 
   devtools: {

@@ -7,7 +7,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div v-auto-animate>
     <VitePwaManifest />
     <NuxtPage />
     <Footer />
